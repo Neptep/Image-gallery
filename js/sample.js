@@ -14,10 +14,9 @@ function addLoadEvent(func){
 //	var today = current_date.getFullYear();
 //	alert(today)
 function showpic(whichpic){
-	if(!document.getElementById("imgplace"))return false;
+	if(!document.getElementById("imgplace"))return true;
 	var source = whichpic.getAttribute("href");
 	var placeholder = document.getElementById("imgplace");
-	if(placeholder.nodeName != "IMG")return false;
 	placeholder.setAttribute("src",source);
 
 	if(document.getElementById("description")){
@@ -25,7 +24,7 @@ function showpic(whichpic){
 		var description = document.getElementById("description");
 		description.firstChild.nodeValue = getTitle;
 	}
-	return true;
+	return false;
 }
 function prepareGallery(){
 	if(!document.getElementsByTagName || !document.getElementById)return false;
@@ -34,7 +33,7 @@ function prepareGallery(){
 	var links = gallery.getElementsByTagName("a");
 	for (var i=0;i < links.length; i++) {
 		links[i].onclick = function(){
-			return showpic(this) ? false : true;
+			return showpic(this);
 		}	
 	}
 	

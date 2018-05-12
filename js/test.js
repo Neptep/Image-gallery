@@ -1,15 +1,3 @@
-//window.onload = function(){
-//	var para = document.createElement("p");
-//	var txt = document.createTextNode("hello ");
-//	var txt2 = document.createElement("em");
-//	var txt1 = document.createTextNode("world");
-//	para.appendChild(txt);
-//	para.appendChild(txt2);
-//	txt2.appendChild(txt1)
-//
-//	var div = document.getElementById("textpla");
-//	div.appendChild(para);
-//}
 function prepareImgPlace (){
 	if(!document.createElement)return false;
 	if(!document.createTextNode)return false;
@@ -31,5 +19,5 @@ function prepareImgPlace (){
 	insertAfter(imgplace,gallery);
 	insertAfter(description,imgplace);
 }
-window.onload = prepareImgPlace;
+addLoadEvent(prepareImgPlace);
 
